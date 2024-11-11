@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 .btn{
   color: #ffffff;
   background-color: #9400FF;
@@ -7,4 +10,16 @@
 .btn:hover{
   background-color: #9e17fffe;
   color: #ffffff;
+}
+.nav-link {
+  display: inline-block;
+  padding: 10px 15px; /* Adjust padding for desired button size */
+  border-radius: 20px; /* Makes the button round */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+  text-decoration: none; /* Remove underline */
+}
+
+.nav-link:hover {
+  background-color: #9032fa; /* Change to your desired hover background color */
+  color: white; /* Change text color on hover */
 }

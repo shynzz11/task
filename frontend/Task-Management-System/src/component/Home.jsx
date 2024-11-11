@@ -1,8 +1,11 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { motion } from 'framer-motion';  // Import motion from framer-motion
+import { motion } from 'framer-motion';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/HomePage.css';
+import img1 from '../assets/real.jpg'; // Adjust the relative path if needed
+import blue from "../assets/blue.mov"
+
 
 const HomePage = () => {
   return (
@@ -15,29 +18,39 @@ const HomePage = () => {
         transition={{ duration: 1.5 }}
       >
         <video autoPlay muted loop className="video-element">
-          <source src="C:\projects\Task-Management-System\frontend\Task-Management-System\src\assets\blue.mov" type="video/mp4" />
+          <source src={blue} type="video/mp4" />
         </video>
       </motion.div>
 
       <Container className="home-content">
         <Row className="justify-content-center align-items-center text-center">
-          <Col lg={8}>
-            <motion.h1
-              initial={{ opacity: 0, y: -100 }}
-              animate={{ opacity: 1, y: 0 }}
+          {/* Left Column: Text */}
+          <Col lg={6} className="text-column">
+            <motion.div
+              initial={{ opacity: 0, x: -100 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1 }}
-              className="display-4"
+              className="card-container"
             >
-              Welcome to <span className="text-primary">Task Management Web Application</span>
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1.2 }}
-              className="lead mb-4"
-            >
-              Experience a smarter way to manage tasks. Boost productivity, collaborate seamlessly, and accomplish more in less time.
-            </motion.p>
+              <h1 className="display-4">
+                Welcome to <span className="task-flow"><br/>Task Flow</span>
+              </h1>
+              <p className="lead mb-4">
+                Experience a smarter way to manage tasks. Boost productivity, collaborate seamlessly, and accomplish more in less time.
+              </p>
+            </motion.div>
+          </Col>
+
+          {/* Right Column: Image */}
+          <Col lg={6} className="image-column">
+            <motion.img
+              src={img1}  // Replace with your image path
+              alt="Task Flow"
+              className="img-fluid rounded shadow"
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1.5 }}
+            />
           </Col>
         </Row>
       </Container>

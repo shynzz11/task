@@ -5,6 +5,7 @@ import { FaPlus, FaTrash, FaPen, FaEye } from "react-icons/fa";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "../css/tasks.css";
+import imagehai from "../assets/Designer2.jpeg";
 
 const TasksComponent = ({ userId }) => {
   const [tasks, setTasks] = useState([]);
@@ -67,7 +68,7 @@ const TasksComponent = ({ userId }) => {
   return (
     <div className="container py-5">
       <div className="row justify-content-center">
-        <div className="col-md-8">
+        <div className="col-md-6 py-4">
           <div className="card shadow-lg">
             <div className="card-body">
               <div className="d-flex justify-content-between align-items-center mb-4">
@@ -141,6 +142,9 @@ const TasksComponent = ({ userId }) => {
               )}
             </div>
           </div>
+        </div>
+        <div className="col-md-6 px-16 flex justify-center">
+          <img src={imagehai} alt="Designer" className="img-fluid" />
         </div>
       </div>
     </div>

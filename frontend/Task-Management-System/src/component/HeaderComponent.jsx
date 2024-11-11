@@ -23,7 +23,7 @@ const HeaderComponent = () => {
             <nav className="fixed-top navbar navbar-expand-lg navbar-light">
                 <div className="container">
                 <NavLink className="navbar-brand" to="/">
-                    <img src={logo} alt="logo" width={30} height={30} />
+                    <img src={logo} alt="logo" width={40} height={40} />
                 </NavLink>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -36,7 +36,7 @@ const HeaderComponent = () => {
                             isAuth &&
                             <li className="nav-item">
                                 {
-                                    isUrlHistory() ?  <NavLink className='nav-link' to='/Tasks'>Tasks</NavLink> :  <NavLink className='nav-link' to='/history'>Task History</NavLink>
+                                    isUrlHistory() ?  <NavLink className='nav-link' to='/Tasks'>Tasks</NavLink> :  <NavLink className='nav-link ' to='/history'>Task History</NavLink>
                                 }
                             </li>
                         }

@@ -8,6 +8,7 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import { FaTrash, FaPen, FaEye, FaCheck, FaTimes } from "react-icons/fa";
 import "../css/tasks.css";
+import imagehai from "../assets/Designer.jpeg";
 
 const TaskHistory = ({ userId }) => {
   const [tasks, setTasks] = useState([]);
@@ -26,7 +27,6 @@ const TaskHistory = ({ userId }) => {
   const viewTaskDetails = (task) => {
     navigate(`/task-details/${task.id}`, { state: task });
   };
-
 
   function updateTask(id) {
     navigate(`/update-task/${id}`);
@@ -57,9 +57,9 @@ const TaskHistory = ({ userId }) => {
   }
 
   return (
-    <div className="container py-5">
+    <div className="container ">
       <div className="row justify-content-center">
-        <div className="col-md-8">
+        <div className="col-md-6 py-20">
           <div className="card shadow-lg">
             <div className="card-body">
               <div className="d-flex justify-content-between align-items-center mb-4">
@@ -133,7 +133,10 @@ const TaskHistory = ({ userId }) => {
             </div>
           </div>
         </div>
-      </div>
+        <div className="col-md-6 px-16 flex justify-center">
+          <img src={imagehai} alt="Designer" className="img-fluid" />
+        </div>
+      </ div>
     </div>
   );
 };
